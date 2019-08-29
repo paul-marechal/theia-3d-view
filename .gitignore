@@ -1,0 +1,8 @@
+.browser_modules
+node_modules
+src-gen
+lib
+
+applications/*/webpack.config.js
+
+*.log
