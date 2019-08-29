@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "theia-browser",
+  "version": "0.0.0",
+  "dependencies": {
+    "@theia/core": "<1",
+    "@theia/filesystem": "<1",
+    "@theia/workspace": "<1",
+    "@theia/preferences": "<1",
+    "@theia/navigator": "<1",
+    "@theia/process": "<1",
+    "@theia/terminal": "<1",
+    "@theia/editor": "<1",
+    "@theia/languages": "<1",
+    "@theia/markers": "<1",
+    "@theia/monaco": "<1",
+    "@theia/textmate-grammars": "<1",
+    "@theia/typescript": "<1",
+    "@theia/messages": "<1",
+    "@marechal-p/theia-3d-view": "*"
+  },
+  "devDependencies": {
+    "@theia/cli": "<1"
+  },
+  "scripts": {
+    "build": "theia build --mode development",
+    "start": "theia start",
+    "watch": "theia build --watch --mode development"
+  },
+  "theia": {
+    "target": "browser"
+  }
+}

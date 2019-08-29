@@ -1,0 +1,31 @@
+{
+  "name": "@marechal-p/theia-3d-view",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "<1",
+    "three": "^0.108.0"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "build": "yarn run clean && yarn run build:tsc",
+    "clean": "rimraf lib",
+    "watch": "tsc -w",
+    "build:tsc": "tsc"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/theia-3d-view-frontend-module",
+      "backend": "lib/node/theia-3d-view-backend-module"
+    }
+  ]
+}

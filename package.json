@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "rebuild:browser": "theia rebuild:browser",
+    "rebuild:electron": "theia rebuild:electron",
+    "build": "lerna run build",
+    "start": "cd applications/browser && yarn start"
+  },
+  "devDependencies": {
+    "lerna": "2.4.0"
+  },
+  "workspaces": [
+    "applications/*",
+    "packages/*"
+  ]
+}
