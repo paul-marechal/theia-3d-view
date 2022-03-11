@@ -3,19 +3,20 @@
 A simple extension to demonstrate's Theia's extensibility: Adds the abitity to
 view simple `.obj` files in your IDE.
 
-> Disclaimer: Implementation is a bit hazy, this is only a proof of concept.
+> Disclaimer: Do not use this code in production, this is a proof of concept.
 
-## Building
+## Building (browser)
 
 ```sh
-yarn install
-yarn build
+yarn
+yarn theia download:plugins
+yarn browser bundle
 ```
 
 ## Running (browser)
 
 ```sh
-yarn start
+yarn browser start
 ```
 
 Then open `http://localhost:3000/` in your browser.

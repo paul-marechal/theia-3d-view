@@ -1,5 +1,6 @@
 {
-  "name": "@marechal-p/theia-3d-view",
+  "name": "@paul-marechal/theia-3d-view",
+  "license": "MIT",
   "keywords": [
     "theia-extension"
   ],
@@ -9,7 +10,7 @@
     "src"
   ],
   "dependencies": {
-    "@theia/core": "<1",
+    "@theia/core": "1.23.0",
     "three": "^0.108.0"
   },
   "devDependencies": {
@@ -17,10 +18,9 @@
     "typescript": "latest"
   },
   "scripts": {
-    "build": "yarn run clean && yarn run build:tsc",
+    "build": "tsc -b",
     "clean": "rimraf lib",
-    "watch": "tsc -w",
-    "build:tsc": "tsc"
+    "watch": "tsc -b -w"
   },
   "theiaExtensions": [
     {

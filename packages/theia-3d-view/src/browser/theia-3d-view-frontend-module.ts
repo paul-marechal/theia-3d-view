@@ -1,4 +1,4 @@
-import { ContainerModule } from 'inversify';
+import { ContainerModule } from '@theia/core/shared/inversify';
 import { WidgetFactory, OpenHandler } from '@theia/core/lib/browser';
 import { Theia3dViewOpenHandler } from './theia-3d-view-open-handler';
 import { Theia3dViewWidget, Theia3dViewWidgetOptions, defaultTheia3dViewOptions } from './theia-3d-view-widget';

@@ -1,5 +1,5 @@
 import * as three from 'three';
-import { injectable, postConstruct, inject } from 'inversify';
+import { injectable, postConstruct, inject } from '@theia/core/shared/inversify';
 import URI from '@theia/core/lib/common/uri';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { Disposable } from '@theia/core';
@@ -48,9 +48,9 @@ export class Theia3dViewWidget extends BaseWidget {
     }
 
     constructor(
-        @inject(Theia3dViewWidgetOptions) options: Required<Theia3dViewWidgetOptions>,
+        @inject(Theia3dViewWidgetOptions) options: Required<Theia3dViewWidgetOptions> & Widget.IOptions,
     ) {
-        super();
+        super(options);
         this._uri = new URI(options.uri);
         try {
             this._renderer = this._register(new three.WebGLRenderer({ alpha: true }));
@@ -74,7 +74,7 @@ export class Theia3dViewWidget extends BaseWidget {
 
             this._object = new Promise((resolve, reject) => {
                 Theia3dViewWidget.OBJLOADER.load(
-                    `${Theia3dViewFileServerPath}/${encodeURIComponent(this._uri.path.toString())}`,
+                    `${Theia3dViewFileServerPath}/${encodeURIComponent(this._uri.toString(true))}`,
                     object => {
                         if (!this.toDispose.disposed) {
                             this._scene.add(object);
@@ -163,9 +163,10 @@ export class Theia3dViewWidget extends BaseWidget {
         });
 
         // Zoom level control
-        this._renderer.domElement.addEventListener('wheel', event => {
-            this._camera.position.z *= 1 + event.deltaY * 0.1
-        });
+        // TODO: Fix it. It does something weird now.
+        // this._renderer.domElement.addEventListener('wheel', event => {
+        //     this._camera.position.z *= 1 + event.deltaY * 0.01
+        // });
 
     }
 

@@ -1,4 +1,4 @@
-import { injectable } from 'inversify';
+import { injectable } from '@theia/core/shared/inversify';
 import { MenuModelRegistry } from '@theia/core';
 import { Theia3dViewWidget } from './theia-3d-view-widget';
 import { AbstractViewContribution } from '@theia/core/lib/browser';

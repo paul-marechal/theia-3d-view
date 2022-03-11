@@ -1,16 +1,27 @@
 {
   "private": true,
   "scripts": {
-    "rebuild:browser": "theia rebuild:browser",
-    "rebuild:electron": "theia rebuild:electron",
-    "build": "lerna run build",
-    "start": "cd applications/browser && yarn start"
+    "browser": "yarn --cwd applications/browser",
+    "prepare": "lerna run build",
+    "electron": "yarn --cwd applications/electron"
   },
   "devDependencies": {
+    "@theia/cli": "1.23.0",
     "lerna": "2.4.0"
   },
   "workspaces": [
     "applications/*",
     "packages/*"
-  ]
+  ],
+  "theiaPluginsDir": "applications/plugins",
+  "theiaPlugins": {
+    "vscode.git": "https://open-vsx.org/api/vscode/git/1.52.1/file/vscode.git-1.52.1.vsix",
+    "vscode.markdown-language-features": "https://open-vsx.org/api/vscode/markdown-language-features/1.39.2/file/vscode.markdown-language-features-1.39.2.vsix",
+    "vscode-builtin-extensions-pack": "https://open-vsx.org/api/eclipse-theia/builtin-extension-pack/1.50.1/file/eclipse-theia.builtin-extension-pack-1.50.1.vsix",
+    "redhat.java": "https://open-vsx.org/api/redhat/java/0.73.0/file/redhat.java-0.73.0.vsix",
+    "vscjava.vscode-java-debug": "https://open-vsx.org/api/vscjava/vscode-java-debug/0.30.0/file/vscjava.vscode-java-debug-0.30.0.vsix",
+    "vscjava.vscode-java-test": "https://open-vsx.org/api/vscjava/vscode-java-test/0.26.1/file/vscjava.vscode-java-test-0.26.1.vsix",
+    "vscjava.vscode-maven": "https://open-vsx.org/api/vscjava/vscode-maven/0.21.2/file/vscjava.vscode-maven-0.21.2.vsix",
+    "vscjava.vscode-java-dependency": "https://open-vsx.org/api/vscjava/vscode-java-dependency/0.16.0/file/vscjava.vscode-java-dependency-0.16.0.vsix"
+  }
 }
